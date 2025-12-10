@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Aztec</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="Menu_style.css" />
+  </head>
+  <body>
+    <audio autoplay loop>
+      <source src="sounds/DarkBackground.mp3" type="audio/mp3" />
+    </audio>
+    <div class="row center-bottom">
+      <div class="box center1">
+        <img
+          src="images/DeathGodHead.png"
+          class="click"
+          id="one"
+          onclick="select1(this)"
+        />
+      </div>
+      <div class="box center1">
+        <img
+          src="images/DeathGodHead.png"
+          class="click"
+          id="two"
+          onclick="select1(this)"
+        />
+      </div>
+      <div class="box center1">
+        <img
+          src="images/DeathGodHead.png"
+          class="click"
+          id="three"
+          onclick="select1(this)"
+        />
+      </div>
+      <div class="box center1">
+        <img
+          src="images/DeathGodHead.png"
+          class="click"
+          id="four"
+          onclick="select1(this)"
+        />
+      </div>
+    </div>
+    <div class="row">
+      <div class="box center1">
+        <img
+          src="images/SunGodBody.png"
+          class="click"
+          id="five"
+          onclick="select(this)"
+        />
+      </div>
+      <div class="box center1">
+        <img
+          src="images/SunGodBody.png"
+          class="click"
+          id="six"
+          onclick="select(this)"
+        />
+      </div>
+      <div class="box center1">
+        <img
+          src="images/SunGodBody.png"
+          class="click"
+          id="seven"
+          onclick="select(this)"
+        />
+      </div>
+      <div class="box center1">
+        <img
+          src="images/SunGodBody.png"
+          class="click"
+          id="eight"
+          onclick="select(this)"
+        />
+      </div>
+    </div>
+    <div class="bottom">
+      <div class="smol-box center1">
+        <img class="no-filter" src="" id="inventory1" />
+      </div>
+      <div class="smol-box center1">
+        <img class="no-filter" src="" id="inventory2" />
+      </div>
+      <div class="smol-box center1">
+        <img src="" id="inventory3" class="no-filter" onclick="" />
+      </div>
+      <div class="smol-box center1">
+        <img class="no-filter" src="" id="inventory4" />
+      </div>
+      <div class="smol-box center1">
+        <img class="no-filter" src="" id="inventory5" />
+      </div>
+      <div class="smol-box center1">
+        <img class="no-filter" src="" id="inventory6" />
+      </div>
+    </div>
+
+    <button id="Menu" onclick="timeKeepersmenu()">MENU</button>
+    <button id="Check" onclick="match()">CHECK</button>
+    <!-- NOTES PAGE --<button id="Direct" onclick="instructions()">instructions</button>*/
+
+    <!-- MENU MODAL -->
+    <div class="menumodal center-content" id="menumodal">
+      <span class="close" onclick="hideModal()">&times;</span>
+      <div class="menumodal-body center-content">
+        <!-- MAIN MENU -->
+        <div id="menuPage" class="menu-page">
+          <h2 class="menu-title">⧖ TIME KEEPER CONSOLE</h2>
+          <button class="menu-btn" onclick="openNotes()">
+            📜 Time Keeper’s Note
+          </button>
+          <button class="menu-btn" onclick="openPortalStatus()">
+            🌀 Portal Status
+          </button>
+          <button class="menu-btn" onclick="openInventory()">
+            🎒 Inventory
+          </button>
+          <button class="menu-btn" onclick="openSettings()">⚙️ Settings</button>
+          <button class="menu-btn" onclick="openHelp()">❓ Help</button>
+          <p class="menu-footer">“Your human blood is the key.”</p>
+          <p class="menu-footer tk-line timekeeper-textZ">
+            ALWAYS REMEMBER THE MENU I LEFT FOR YOU HAS THE HINTS NEEDED TO
+            BANISH THE MONSTER
+          </p>
+        </div>
+
+        <!-- NOTES PAGE -->
+        <div id="notesPage" class="menu-page hidden">
+          <h2 class="menu-title">📜 Time Keeper’s Notes</h2>
+          <button class="menu-btn" onclick="showHint(1)">Portal 1 Hint</button>
+          <button class="menu-btn" onclick="showHint(2)">Portal 2 Hint</button>
+          <button class="menu-btn" onclick="showHint(3)">Portal 3 Hint</button>
+          <button class="menu-btn" onclick="showHint(4)">Portal 4 Hint</button>
+          <button class="menu-btn locked" id="portal5Hint" disabled>
+            Portal 5 Hint (Locked)
+          </button>
+          <button class="menu-btn back-btn" onclick="returnToMenu()">
+            ← Back
+          </button>
+          <p id="hintText" class="hint-output"></p>
+        </div>
+
+        <!-- PORTAL STATUS PAGE -->
+        <div id="statusPage" class="menu-page hidden">
+          <h2 class="menu-title">🌀 Portal Status</h2>
+          <p id="portalStatus1" class="status-line help-text">Portal 1: -</p>
+          <p id="portalStatus2" class="status-line help-text">Portal 2: -</p>
+          <p id="portalStatus3" class="status-line help-text">Portal 3: -</p>
+          <p id="portalStatus4" class="status-line help-text">
+            Portal 4: In Progress
+          </p>
+          <p id="portalStatus5" class="status-line help-text locked">
+            Portal 5: Not Ready
+          </p>
+          <button class="menu-btn back-btn" onclick="returnToMenu()">
+            ← Back
+          </button>
+        </div>
+
+        <!-- INVENTORY PAGE -->
+        <div id="inventoryPage" class="menu-page hidden">
+          <h2 class="menu-title">🎒 Inventory</h2>
+
+          <div class="center">
+            <div class="smol-box1"><img src="" id="" class="" /></div>
+            <div class="smol-box1"><img src="" id="" class="" /></div>
+            <div class="smol-box1"><img src="" id="" class="" /></div>
+            <div class="smol-box1"><img src="" id="" class="" /></div>
+            <div class="smol-box1"><img src="" id="" class="" /></div>
+            <div class="smol-box1"><img src="" id="" class="" /></div>
+          </div>
+          <ul id="inventoryList"></ul>
+          <button class="menu-btn back-btn" onclick="returnToMenu()">
+            ← Back
+          </button>
+        </div>
+        <!-- HELP PAGE -->
+        <div id="helpPage" class="menu-page hidden">
+          <h2 class="menu-title red-alert">❗ HELP REQUESTED ❗</h2>
+          <p class="help-text">
+            A signal has been sent to the 4 Keys to Midnight team.
+          </p>
+          <p class="help-text">Stand by... we’re coming.</p>
+          <button class="menu-btn back-btn" onclick="returnToMenu()">
+            ← Back
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- NEW MODAL, visible on page load -->
+    <div class="new-modal show" id="bruhModal">
+      <button class="new-close" onclick="closeBruhModal()">&times;</button>
+      <div class="new-modal-body">
+        <h1>
+          Match the heads with the correct body in the correct order, click on
+          the heads and bodies. REMEBER, it needs to be in order, click the MENU
+          button to figure out the order. Click the Check button to see if
+          you're correct!
+        </h1>
+      </div>
+    </div>
+  </body>
+  <audio src="sounds/EvilLaugh.mp3" type="audio/mp3" id="lol"></audio>
+  <audio src="sounds/DarkBackground.mp3" type="audio/mp3" id="scare"></audio>
+  <script src="script.js"></script>
+  <script src="Menu_script.js"></script>
+</html>

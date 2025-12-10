@@ -1,0 +1,21 @@
+preload(
+  "images/Death.png",
+  "images/Tlaloc-statue.png",
+  "images/SunGod.png",
+  "images/wind.png",
+  "images/SunGlyph.png",
+  "images/RainVessel.png",
+  "images/windglyph.png",
+  "images/DeathGlyph.png",
+  "sounds/DarkBackground.mp3",
+  "sounds/EvilLaugh.mp3",
+  "images/DeathGodBody.png",
+  "images/WaterGodBody.png",
+  "images/SunGodBody.png",
+  "images/AirGodBody.png",
+  "images/DeathGodHead.png",
+  "images/WaterGodHead.png",
+  "images/SunGodHead.png",
+  "images/AirGodHead.png",
+  "images/AztecPotion.png"
+);
