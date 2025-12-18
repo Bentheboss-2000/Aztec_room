@@ -14,6 +14,13 @@ body {
   align-items: flex-end;
   display: flex;
 }
+.note {
+  color: rgb(241, 7, 7);
+  font-size: 30px;
+  position: absolute;
+  top: 35px;
+  right: 190px;
+}
 .center1 {
   justify-content: center;
   align-items: center;
